@@ -1,0 +1,36 @@
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# tool
+*.iml
+.idea
+target
+/.project
+/.settings/
+.project
+.settings
+.classpath
+out
+classes/
+coupon-admin/build/
+coupon-admin/out/
+coupon-core/build/
+coupon-core/out/
+coupon-batch/build/
+coupon-batch/out/
+coupon-bizweb/build/
+coupon-bizweb/out/
+coupon-api/build/
+coupon-api/out/
+build/
+.gradle/
