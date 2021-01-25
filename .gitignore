@@ -34,3 +34,5 @@ coupon-api/build/
 coupon-api/out/
 build/
 .gradle/
+
+.secret
