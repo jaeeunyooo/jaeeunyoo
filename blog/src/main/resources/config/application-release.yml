@@ -1,0 +1,16 @@
+phase: release
+
+url: https://blog.jaeeunyoo.com
+
+spring:
+  resources:
+    cache:
+      period: 3600
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            redirect-uri: https://blog.jaeeunyoo.com
+            client-id: 66d413050d08a5db2088
+            client-secret: 13cb11dba648c25d52c3b326511dca2896bcb9af

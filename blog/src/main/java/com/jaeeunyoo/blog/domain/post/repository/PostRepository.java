@@ -1,0 +1,25 @@
+package com.jaeeunyoo.blog.domain.post.repository;
+
+import com.jaeeunyoo.blog.domain.post.entity.Post;
+import com.jaeeunyoo.blog.domain.post.entity.PostTag;
+import java.util.List;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+public interface PostRepository extends JpaRepository<Post, Integer> {
+
+    List<Post> findAllBy();
+
+    List<Post> findByDeletedFalseAndPostTagsInOrderByModifyDateTimeDesc(List<PostTag> postTags);
+
+    PageImpl<Post> findByDeletedFalseOrderByModifyDateTimeDesc(Pageable pageable);
+
+//    long findCountByDeletedFalseOrderByModifyDateTimeDesc(Pageable pageable);
+
+    @Query(nativeQuery = true, value = "SELECT year(post.modify_datetime) as y from post post group by year(post.modify_datetime) order by y desc")
+    List<Integer> findArchiveYears();
+
+    List<Post> findByDeletedFalseOrderByModifyDateTimeDesc();
+}

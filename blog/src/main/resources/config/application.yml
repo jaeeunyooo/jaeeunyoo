@@ -1,0 +1,11 @@
+server.port: 10000
+
+spring:
+  freemarker:
+    settings:
+      number_format: computer
+    suffix: .ftl
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
