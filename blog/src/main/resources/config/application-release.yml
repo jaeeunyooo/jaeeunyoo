@@ -11,6 +11,6 @@ spring:
       client:
         registration:
           github:
-            redirect-uri: https://blog.jaeeunyoo.com
+            redirect-uri: https://blog.jaeeunyoo.com/login/oauth2/code/github
             client-id: 66d413050d08a5db2088
             client-secret: 13cb11dba648c25d52c3b326511dca2896bcb9af
