@@ -25,7 +25,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                                                           "/tag/**",
                                                           "/error",
                                                           "/login",
-                                                          "/login/oauth2/code/github"
+                                                          "/login/oauth2/code/github",
+                                                          "/actuator/health"
                                                           )
                                              .permitAll()
                                              .anyRequest()
