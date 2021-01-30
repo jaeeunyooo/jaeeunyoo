@@ -55,7 +55,7 @@
             </#if>
           </div>
           <ul class="pagination mt-4 mb-0 pl-lg-2">
-            <#if postPage??>
+            <#if (postPage?? && postPage.numberOfElements > 0)>
               <li class="page-item<#if postPage.first> disabled</#if>">
                 <a class="page-link btn-box-shadow" aria-label="previous-page" data-pagenumber="0">
                   <i class="fas fa-angle-left"></i>
