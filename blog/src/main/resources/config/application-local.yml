@@ -3,6 +3,8 @@ phase: local
 url: http://localhost:10000
 
 spring:
+  pid:
+    file: pid/jaeeunyoo-blog.pid
   security:
     oauth2:
       client:
