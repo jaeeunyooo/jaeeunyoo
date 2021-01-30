@@ -3,7 +3,7 @@
     <div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between">
       <#nested>
       <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
-      <a href="/sign-in" class="nav-link" style="display: contents"><i class="fa-fw fas fa-sign-in-alt ml-xl-3 mr-xl-3"></i></a>
+<#--      <a href="/sign-in" class="nav-link" style="display: contents"><i class="fa-fw fas fa-sign-in-alt ml-xl-3 mr-xl-3"></i></a>-->
 <#--      <div id="topbar-title">Tags</div>-->
 <#--      <i id="search-trigger" class="fas fa-search fa-fw"></i>-->
 <#--      <span id="search-wrapper" class="align-items-center">-->

@@ -9,8 +9,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.csrf()
-                    .disable()
+        httpSecurity.httpBasic().disable()
+                    .formLogin().disable()
+                    .csrf().disable()
+                    .logout().disable()
                     .cors()
                     .and()
                     .authorizeRequests(a -> a.antMatchers("/static/**",
@@ -23,7 +25,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                                                           "/category/**",
                                                           "/tag",
                                                           "/tag/**",
-                                                          "/error"
+                                                          "/github",
+                                                          "/error",
+                                                          "/login",
+                                                          "/login/**",
+                                                          "/auth/**",
+                                                          "/loginSuccess",
+                                                          "/loginFailure",
+                                                          "/oauth2/**",
+                                                          "/actuator/health"
                                                           )
                                              .permitAll()
                                              .anyRequest()

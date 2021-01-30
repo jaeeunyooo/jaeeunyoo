@@ -35,5 +35,6 @@ coupon-api/out/
 build/
 .gradle/
 
+pid/
 secret/
 Dockerfile

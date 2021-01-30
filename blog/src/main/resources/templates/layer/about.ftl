@@ -26,9 +26,14 @@
     <div class="row">
       <div id="post-wrapper" class="col-12 col-lg-11 col-xl-8">
         <div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
-          <h1 data-toc-skip="">Welcome to My Blog!</h1>
+          <h1 data-toc-skip=""><em>기계는 거짓말을 하지 않는다</em></h1>
           <div id="_postContent" class="post-content">
-            <h2 data-nodeid="1659" class="">안녕?</h2>
+            <h3>About Me</h3>
+            <ul>
+              <li>보통의 개발자</li>
+              <li>퇴근 후 토이 프로젝트 즐기는 편</li>
+              <li>낚시와 캠핑 매우 좋아함</li>
+            </ul>
           </div>
         </div> <!-- .post -->
       </div> <!-- #post-wrapper -->

@@ -3,6 +3,8 @@ phase: release
 url: https://blog.jaeeunyoo.com
 
 spring:
+  pid:
+    file: /home/jaeeunyoo/pid/jaeeunyoo-blog.pid
   resources:
     cache:
       period: 3600

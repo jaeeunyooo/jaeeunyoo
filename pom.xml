@@ -3,7 +3,6 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>com.jaeeunyoo</groupId>
   <artifactId>jaeeunyoo</artifactId>
   <packaging>pom</packaging>
@@ -11,15 +10,17 @@
   <modules>
     <module>blog</module>
   </modules>
-
   <properties>
     <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
     <lombok.version>1.18.10</lombok.version>
   </properties>
-
   <build>
     <finalName>${project.name}</finalName>
     <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
