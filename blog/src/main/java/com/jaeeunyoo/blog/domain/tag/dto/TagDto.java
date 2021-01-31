@@ -19,7 +19,11 @@ public class TagDto implements Serializable {
         TagDto dto = new TagDto();
         dto.tagId = tag.getTagId();
         dto.tagName = tag.getTagName();
-        dto.taggedPosts = tag.getPostTags().stream().map(postTag -> PostSummaryDto.create(postTag.getPost())).collect(Collectors.toList());
+        dto.taggedPosts = tag.getPostTags()
+                             .stream()
+                             .filter(postTag -> !postTag.getPost().getDeleted())
+                             .map(postTag -> PostSummaryDto.create(postTag.getPost()))
+                             .collect(Collectors.toList());
         return dto;
     }
 

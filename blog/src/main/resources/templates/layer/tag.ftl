@@ -29,7 +29,7 @@
             <h1 class="pl-lg-2">
               <i class="fa fa-tag fa-fw text-muted"></i>
               ${tag.tagName}
-              <span class="lead text-muted pl-2">${tag.postTags?size}</span>
+              <span class="lead text-muted pl-2">${tag.taggedPosts?size}</span>
             </h1>
             <ul class="post-content pl-0">
               <#if taggedPosts??>

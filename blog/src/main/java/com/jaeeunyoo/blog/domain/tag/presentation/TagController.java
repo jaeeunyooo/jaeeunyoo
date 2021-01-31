@@ -2,6 +2,7 @@ package com.jaeeunyoo.blog.domain.tag.presentation;
 
 import com.jaeeunyoo.blog.domain.post.application.PostService;
 import com.jaeeunyoo.blog.domain.tag.application.TagService;
+import com.jaeeunyoo.blog.domain.tag.dto.TagDto;
 import com.jaeeunyoo.blog.domain.tag.entity.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -30,7 +31,7 @@ public class TagController {
     @GetMapping("{tagId}")
     public String tag(Model model, @PathVariable("tagId") Tag tag) {
         model.addAttribute("trendingTags", tagService.getTrendingTags());
-        model.addAttribute("tag", tag);
+        model.addAttribute("tag", TagDto.create(tag));
         model.addAttribute("taggedPosts", postService.getTaggedPosts(tag));
         return "layer/tag";
     }

@@ -17,7 +17,7 @@ public class CategoryDetailDto {
         CategoryDetailDto dto = new CategoryDetailDto();
         dto.categoryId = category.getCategoryId();
         dto.categoryName = category.getCategoryName();
-        dto.posts = category.getPosts().stream().map(PostSummaryDto::create).collect(Collectors.toList());
+        dto.posts = category.getPosts().stream().filter(post -> !post.getDeleted()).map(PostSummaryDto::create).collect(Collectors.toList());
         return dto;
     }
 }
