@@ -14,10 +14,8 @@ spring:
             client-id: 6a5ea0dfd6893cf7bbf9
             client-secret: 1761c0cf53ccf6bdf1061f6ea4e989f0293681d1
 logging:
-  file:
-    name: /Users/nhn/workspace/jaeeunyoo/log/blog.log
   level:
-    root: debug
+    root: info
   logback:
     rollingpolicy:
       max-history: 14

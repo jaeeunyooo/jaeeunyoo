@@ -4,7 +4,6 @@ url: https://blog.jaeeunyoo.com
 
 spring:
   pid:
-#    file: //Users/nhn/workspace/jaeeunyoo/pid/jaeeunyoo-blog.pid
     file: /home/jaeeunyoo/pid/jaeeunyoo-blog.pid
   resources:
     cache:
@@ -21,7 +20,7 @@ logging:
   file:
     name: /home/jaeeunyoo/logs/jaeeunyoo-blog/blog.log
   level:
-    root: debug
+    root: info
   logback:
     rollingpolicy:
       max-history: 14

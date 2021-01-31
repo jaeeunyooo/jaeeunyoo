@@ -31,7 +31,7 @@
               <#if tags??>
                 <#list tags as tag>
                   <div>
-                    <a class="tag" href="/tag/${tag.tagId}/">${tag.tagName}<span class="text-muted">${tag.taggedPosts?size}</span></a>
+                    <a class="tag" href="/tag/${tag.tagId}">${tag.tagName}<span class="text-muted">${tag.taggedPosts?size}</span></a>
                   </div>
                 </#list>
               </#if>
