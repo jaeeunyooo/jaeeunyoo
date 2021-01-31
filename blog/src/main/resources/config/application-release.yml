@@ -18,9 +18,10 @@ spring:
             client-id: 66d413050d08a5db2088
             client-secret: 13cb11dba648c25d52c3b326511dca2896bcb9af
 logging:
+  file:
+    name: /home/jaeeunyoo/logs/jaeeunyoo-blog/blog.log
   level:
     root: debug
-    com.jaeeunyoo.blog: debug
-    org.springframework.web: debug
-    org.hibernate.SQL: debug
-  config: classpath:logback-spring.xml
+  logback:
+    rollingpolicy:
+      max-history: 14
