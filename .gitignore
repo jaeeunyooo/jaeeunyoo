@@ -37,4 +37,5 @@ build/
 
 pid/
 secret/
+log/
 Dockerfile
