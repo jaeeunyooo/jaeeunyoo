@@ -4,6 +4,7 @@ url: https://blog.jaeeunyoo.com
 
 spring:
   pid:
+#    file: //Users/nhn/workspace/jaeeunyoo/pid/jaeeunyoo-blog.pid
     file: /home/jaeeunyoo/pid/jaeeunyoo-blog.pid
   resources:
     cache:
@@ -16,3 +17,10 @@ spring:
             redirect-uri: https://blog.jaeeunyoo.com/login/oauth2/code/github
             client-id: 66d413050d08a5db2088
             client-secret: 13cb11dba648c25d52c3b326511dca2896bcb9af
+logging:
+  level:
+    root: debug
+    com.jaeeunyoo.blog: debug
+    org.springframework.web: debug
+    org.hibernate.SQL: debug
+  config: classpath:logback-spring.xml
