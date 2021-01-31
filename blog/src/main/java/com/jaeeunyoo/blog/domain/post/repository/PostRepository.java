@@ -12,14 +12,14 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
 
     List<Post> findAllBy();
 
-    List<Post> findByDeletedFalseAndPostTagsInOrderByModifyDateTimeDesc(List<PostTag> postTags);
+    List<Post> findByDeletedFalseAndPostTagsInOrderByRegisterDateTimeDesc(List<PostTag> postTags);
 
-    PageImpl<Post> findByDeletedFalseOrderByModifyDateTimeDesc(Pageable pageable);
+    PageImpl<Post> findByDeletedFalseOrderByRegisterDateTimeDesc(Pageable pageable);
 
 //    long findCountByDeletedFalseOrderByModifyDateTimeDesc(Pageable pageable);
 
-    @Query(nativeQuery = true, value = "SELECT year(post.modify_datetime) as y from post post group by year(post.modify_datetime) order by y desc")
+    @Query(nativeQuery = true, value = "SELECT year(post.register_datetime) as y from post post group by year(post.register_datetime) order by y desc")
     List<Integer> findArchiveYears();
 
-    List<Post> findByDeletedFalseOrderByModifyDateTimeDesc();
+    List<Post> findByDeletedFalseOrderByRegisterDateTimeDesc();
 }

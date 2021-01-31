@@ -36,8 +36,8 @@
                     <#list archive.posts as post>
                       <li>
                         <div>
-                          <span class="date day">${post.formattedModifyDayOfMonth}</span>
-                          <span class="date month small text-muted">${post.formattedModifyMonth}</span>
+                          <span class="date day">${post.formattedRegisterDayOfMonth}</span>
+                          <span class="date month small text-muted">${post.formattedRegisterMonth}</span>
                           <a href="/post/${post.postId}">${post.postTitle}</a>
                         </div>
                       </li>

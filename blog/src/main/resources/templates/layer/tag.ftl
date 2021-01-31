@@ -37,7 +37,7 @@
                   <li class="d-flex justify-content-between pl-md-3 pr-md-3">
                     <a href="/post/${post.postId}">${post.postTitle}</a>
                     <span class="dash flex-grow-1"></span>
-                    <span class="text-muted small">${post.formattedModifyDate}</span>
+                    <span class="text-muted small">${post.formattedRegisterDate}</span>
                   </li>
                 </#list>
               </#if>

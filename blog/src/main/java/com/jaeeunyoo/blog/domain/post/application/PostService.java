@@ -31,13 +31,13 @@ public class PostService {
     private final PostTagRepository postTagRepository;
 
     public PageImpl<PostSummaryDto> getRecentPostPage(Pageable pageable) {
-        PageImpl<Post> postPage = postRepository.findByDeletedFalseOrderByModifyDateTimeDesc(pageable);
+        PageImpl<Post> postPage = postRepository.findByDeletedFalseOrderByRegisterDateTimeDesc(pageable);
         return new PageImpl<>(PostSummaryDto.createMany(postPage.getContent()), pageable, postPage.getTotalElements());
     }
 
     public List<Archive> getArchives() {
         List<Integer> archiveYears = postRepository.findArchiveYears();
-        List<Post> allPosts = postRepository.findByDeletedFalseOrderByModifyDateTimeDesc();
+        List<Post> allPosts = postRepository.findByDeletedFalseOrderByRegisterDateTimeDesc();
         if (allPosts == null || allPosts.isEmpty()) {
             return Collections.emptyList();
         }
@@ -47,7 +47,7 @@ public class PostService {
             Archive archive = new Archive();
             archive.setYear(year);
             for(Post post : allPosts) {
-                if(year.equals(post.getModifyDateTime().getYear())) {
+                if(year.equals(post.getRegisterDateTime().getYear())) {
                     archive.getPosts().add(PostSummaryDto.create(post));
                 }
             }
@@ -57,12 +57,12 @@ public class PostService {
     }
 
     public List<PostSummaryDto> getTaggedPosts(Tag tag) {
-        return PostSummaryDto.createMany(postRepository.findByDeletedFalseAndPostTagsInOrderByModifyDateTimeDesc(tag.getPostTags()));
+        return PostSummaryDto.createMany(postRepository.findByDeletedFalseAndPostTagsInOrderByRegisterDateTimeDesc(tag.getPostTags()));
     }
 
     @Cacheable(value = CacheKey.KEY_ALL_POSTS)
     public List<SimpleJekyllSearchResult> getAllSimpleJekyllSearchResults() {
-        return postRepository.findByDeletedFalseOrderByModifyDateTimeDesc().stream().map(SimpleJekyllSearchResult::create).collect(Collectors.toList());
+        return postRepository.findByDeletedFalseOrderByRegisterDateTimeDesc().stream().map(SimpleJekyllSearchResult::create).collect(Collectors.toList());
     }
 
     public void savePost(Post post) {

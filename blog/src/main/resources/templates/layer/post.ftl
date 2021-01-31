@@ -29,7 +29,7 @@
           <h1 data-toc-skip="">${post.postTitle}</h1>
           <div class="post-meta text-muted d-flex flex-column">
             <div>
-              <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="${post.modifyDateTime}">${post.formattedModifyDate}<i class="unloaded">${post.modifyDateTime}</i></span> by
+              <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="${post.registerDateTime}">${post.formattedRegisterDate}<i class="unloaded">${post.registerDateTime}</i></span> by
               <span class="author">Jaeeun Yoo</span>
             </div>
             <div>
@@ -92,67 +92,6 @@
     </div>
     <div class="row">
       <div class="col-12 col-lg-11 col-xl-8">
-<#--        <div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">-->
-<#--          <!---->
-<#--           Recommend the other 3 posts according to the tags and categories of the current post,-->
-<#--           if the number is not enough, use the other latest posts to supplement.-->
-
-<#--           v2.0-->
-<#--           https://github.com/cotes2020/jekyll-theme-chirpy-->
-<#--           © 2019 Cotes Chung-->
-<#--           Published under the MIT License-->
-<#--          &ndash;&gt;-->
-<#--          <!-- The total size of related posts  &ndash;&gt;-->
-<#--          <!-- An random integer that bigger than 0  &ndash;&gt;-->
-<#--          <!-- Equals to TAG_SCORE / {max_categories_hierarchy}  &ndash;&gt;-->
-<#--          <!-- Fill with the other newlest posts  &ndash;&gt;-->
-<#--          <div id="related-posts" class="mt-5 mb-2 mb-sm-4">-->
-<#--            <h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip="">Further Reading</h3>-->
-<#--            <div class="card-deck mb-4">-->
-<#--              <div class="card">-->
-<#--                <a href="/posts/write-a-new-post/">-->
-<#--                  <div class="card-body">-->
-<#--                    <!---->
-<#--                      Date format snippet-->
-
-<#--                      v2.4.1-->
-<#--                      https://github.com/cotes2020/jekyll-theme-chirpy-->
-<#--                      © 2020 Cotes Chung-->
-<#--                      MIT License-->
-<#--                    &ndash;&gt;-->
-<#--                    <span class="timeago small">Aug 8, 2019<i class="unloaded">2019-08-08T14:10:00+08:00</i></span>-->
-<#--                    <h3 class="pt-0 mt-1 mb-3" data-toc-skip="">Writing a New Post</h3>-->
-<#--                    <div class="text-muted small">-->
-<#--                      <p>-->
-<#--                        Naming and Path-->
-<#--                        Create a new file named YYYY-MM-DD-TITLE.EXTENSION and put it in the _posts/ of the root directory. Please note that the EXTENSION must be one of md and markdown.-->
-<#--                        Front Matter-->
-<#--                        Ba...-->
-<#--                      </p>-->
-<#--                    </div>-->
-<#--                  </div>-->
-<#--                </a>-->
-<#--              </div>-->
-<#--            </div> <!-- .card-deck &ndash;&gt;-->
-<#--          </div> <!-- #related-posts &ndash;&gt;-->
-
-<#--          <!---->
-<#--            Navigation buttons at the bottom of the post.-->
-
-<#--            v2.1-->
-<#--            https://github.com/cotes2020/jekyll-theme-chirpy-->
-<#--            © 2020 Cotes Chung-->
-<#--            MIT License-->
-<#--          &ndash;&gt;-->
-<#--          <div class="post-navigation d-flex justify-content-between">-->
-<#--            <a href="/posts/write-a-new-post/" class="btn btn-outline-primary">-->
-<#--              <p>Writing a New Post</p>-->
-<#--            </a>-->
-<#--            <a href="/posts/customize-the-favicon/" class="btn btn-outline-primary">-->
-<#--              <p>Customize the Favicon</p>-->
-<#--            </a>-->
-<#--          </div>-->
-<#--        </div> <!-- #post-extend-wrapper &ndash;&gt;-->
         <div id="disqus_thread"></div>
         <script>
 

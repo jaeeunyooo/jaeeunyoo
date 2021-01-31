@@ -40,7 +40,7 @@
                     <div class="post-meta text-muted d-flex justify-content-between">
                       <div>
                         <i class="far fa-calendar fa-fw"></i>
-                        <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="${post.modifyDateTime}">${post.formattedModifyDate}<i class="unloaded">${post.modifyDateTime}</i></span>
+                        <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="${post.registerDateTime}">${post.formattedRegisterDate}<i class="unloaded">${post.registerDateTime}</i></span>
                           <i class="far fa-clock fa-fw"></i>
                           <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="${post.wordCount} words">${post.minuteToRead} min</span>
                       </div>
@@ -112,7 +112,7 @@
     <div class="post-meta text-muted d-flex justify-content-between">
       <div>
         <i class="far fa-calendar fa-fw"></i>
-        <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="${r'${modifyDateTime}'}">${r'${formattedModifyDate}'}<i class="unloaded">${r'${modifyDateTime}'}</i></span>
+        <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="" data-original-title="${r'${registerDateTime}'}">${r'${formattedRegisterDate}'}<i class="unloaded">${r'${registerDateTime}'}</i></span>
         <i class="far fa-clock fa-fw"></i>
         <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="${r'${wordCount}'} words">${r'${minuteToRead}'} min</span>
       </div>
