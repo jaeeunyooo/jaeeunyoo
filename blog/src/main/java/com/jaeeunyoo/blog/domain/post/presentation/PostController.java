@@ -7,13 +7,12 @@ import com.jaeeunyoo.blog.domain.post.dto.PostDetailDto;
 import com.jaeeunyoo.blog.domain.post.entity.Post;
 import com.jaeeunyoo.blog.domain.tag.application.TagService;
 import com.jaeeunyoo.blog.exception.NotFoundException;
+import javax.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,7 +49,7 @@ public class PostController {
 
     @GetMapping("/post/{postId}")
     public String post(Model model, @PathVariable("postId") Post post) {
-        if(post == null) {
+        if(post == null || post.getDeleted()) {
             throw new NotFoundException();
         }
 
@@ -63,18 +62,15 @@ public class PostController {
     }
 
     @GetMapping("/new")
-    public String newPost(Model model,
-                          @AuthenticationPrincipal OAuth2User principal) {
-        memberService.verifyMember(principal);
+    public String newPost(Model model, HttpSession httpSession) {
+        memberService.verifyMember((String) httpSession.getAttribute("githubAccount"), (Integer) httpSession.getAttribute("githubAccountId"));
         model.addAttribute("allCategories", categoryService.getAllCategories());
         return "layer/edit";
     }
 
     @GetMapping("/post/{postId}/edit")
-    public String editPost(Model model,
-                           @PathVariable("postId") Post post,
-                           @AuthenticationPrincipal OAuth2User principal) {
-        memberService.verifyMember(principal);
+    public String editPost(Model model, HttpSession httpSession, @PathVariable("postId") Post post) {
+        memberService.verifyMember((String) httpSession.getAttribute("githubAccount"), (Integer) httpSession.getAttribute("githubAccountId"));
         if(post == null) {
             throw new NotFoundException();
         }

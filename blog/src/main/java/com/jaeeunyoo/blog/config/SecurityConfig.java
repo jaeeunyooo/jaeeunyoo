@@ -1,11 +1,16 @@
 package com.jaeeunyoo.blog.config;
 
+import com.jaeeunyoo.blog.domain.member.service.MemberService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
+@RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    private final MemberService memberService;
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
@@ -30,6 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                                                           "/login",
                                                           "/login/**",
                                                           "/auth/**",
+                                                          "/authentication/**",
                                                           "/loginSuccess",
                                                           "/loginFailure",
                                                           "/oauth2/**",
@@ -38,6 +44,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                                              .permitAll()
                                              .anyRequest()
                                              .authenticated())
-                    .oauth2Login();
+                    .oauth2Login()
+                    .userInfoEndpoint()
+                    .userService(memberService);
     }
 }
