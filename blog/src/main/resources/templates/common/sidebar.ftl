@@ -53,7 +53,7 @@
       <a href="https://www.facebook.com/frontiersofme" aria-label="facebook" class="order-5" target="_blank" rel="noopener">
         <i class="fab fa-facebook"></i>
       </a>
-      <a href="https://www.facebook.com/frontiersofme" aria-label="instagram" class="order-6" target="_blank" rel="noopener">
+      <a href="https://www.instagram.com/frontiersofme" aria-label="instagram" class="order-6" target="_blank" rel="noopener">
         <i class="fab fa-instagram"></i>
       </a>
 <#--      <a href="javascript:location.href = 'mailto:' + ['frontiersofme','gmail.com'].join('@')" aria-label="email" class="order-7">-->
