@@ -18,7 +18,7 @@ public class RootCategoryDto extends SubCategoryDto {
         RootCategoryDto dto = new RootCategoryDto();
         dto.categoryId = category.getCategoryId();
         dto.categoryName = category.getCategoryName();
-        dto.posts = category.getPosts().stream().map(PostSummaryDto::create).collect(Collectors.toList());
+        dto.posts = category.getPosts().stream().filter(post -> !post.getDeleted()).map(PostSummaryDto::create).collect(Collectors.toList());
         if(category.getSubCategories() != null) {
             dto.subCategories = category.getSubCategories().stream().map(SubCategoryDto::create).collect(Collectors.toList());
         }

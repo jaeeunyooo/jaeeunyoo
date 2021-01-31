@@ -11,7 +11,7 @@
       <div class="footer-left">
         <p class="mb-0">
           © 2021
-          <a href="https://twitter.com/username">your_full_name</a>.
+          <a href="https://twitter.com/username">jaeeun.yoo</a>.
           <span data-toggle="tooltip" data-placement="top" title="" data-original-title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span>
         </p>
       </div>
