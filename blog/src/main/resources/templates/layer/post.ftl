@@ -9,6 +9,7 @@
 <html lang="en">
 <head>
   <@head.common_meta/>
+  <meta name="google-site-verification" content="_HplPAA2HQhu7zFsJNyzbPEojnyemv9DYCvEZqidig8" />
   <@head.cdn_jsdelivr_net/>
   <@head.cdnjs_cloudflare_com/>
   <@head.uicdn_toast_com/>
