@@ -28,12 +28,26 @@
       <div id="post-wrapper" class="col-12 col-lg-11 col-xl-8">
         <div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
           <h1 data-toc-skip=""><em>기계는 거짓말을 하지 않는다</em></h1>
-          <div id="_postContent" class="post-content">
-            <h3>About Me</h3>
+          <div id="_aboutContent">
+            <h2>About Me</h2>
+            <p><img src="http://image.toast.com/aaaabai/jaeeunyoo/blog/401e257f-bd65-4e5b-8ea6-2cae4c75632e.png" alt="image"></p>
             <ul>
-              <li>보통의 개발자</li>
-              <li>퇴근 후 토이 프로젝트 즐기는 편</li>
-              <li>낚시와 캠핑 매우 좋아함</li>
+              <li>89년 4월 1일 거짓말처럼 태어남</li>
+              <li>보통의 서버 개발자</li>
+              <li>회사 프로젝트하다가 퇴근하고 토이 프로젝트 즐기는 편</li>
+              <li>관심 분야
+                <ul>
+                  <li>백엔드, 인프라, 임베디드</li>
+                  <li>Java, Kotlin, Python</li>
+                  <li>낚시, 캠핑</li>
+                  <li>먹고 살 궁리</li>
+                </ul>
+              </li>
+            </ul>
+            <h2>About Blog</h2>
+            <ul>
+              <li>블로그 프로젝트 : <a href="https://github.com/jaeeunyooo/jaeeunyoo">https://github.com/jaeeunyooo/jaeeunyoo</a></li>
+              <li>본 블로그는 Nginx, SpringBoot, JPA, MySQL, Redis, Toast UI Editor, Toast Image 등을 이용하여 만들어졌습니다</li>
             </ul>
           </div>
         </div> <!-- .post -->
