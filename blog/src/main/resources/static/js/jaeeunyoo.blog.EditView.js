@@ -45,6 +45,7 @@ jaeeunyoo.blog.EditView = (function () {
             cache: false,
             success: function (toastImage) {
               if(toastImage != null) {
+                console.log(toastImage);
                 console.log("SUCCESS");
                 callback(toastImage.url, 'image');
               }

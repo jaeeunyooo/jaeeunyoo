@@ -16,7 +16,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.authorizeRequests()
+        httpSecurity.csrf()
+                    .disable()
+                    .authorizeRequests()
                     .antMatchers("/").permitAll()
                     .antMatchers("/sitemap").permitAll()
                     .antMatchers("/post/*").permitAll()
@@ -27,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/tag").permitAll()
                     .antMatchers("/tag/**").permitAll()
                     .antMatchers("/static/**").permitAll()
-                    .antMatchers("/api/**").permitAll()
+                    .antMatchers("/api/post").permitAll()
                     .antMatchers("/actuator/health").permitAll()
                     .anyRequest().authenticated()
                     .and()

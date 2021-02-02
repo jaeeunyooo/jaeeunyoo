@@ -13,10 +13,10 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class ApiClientConfig {
 
-    @Value("appKey")
+    @Value("${appKey}")
     private String appKey;
 
-    @Value("secretKey")
+    @Value("${secretKey}")
     private String secretKey;
 
     @Bean
