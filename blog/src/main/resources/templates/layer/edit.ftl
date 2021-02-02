@@ -53,7 +53,7 @@
               <#if post??>
                 <div id="_sub_category_${rootCategory.categoryId?c}" class="_sub_category" <#if post.upperCategoryId?c == rootCategory.categoryId?c>style="display: inline"<#else>style="display: none"</#if>>
               <#else>
-                <div id="_sub_category_${rootCategory.categoryId?c}" class="_sub_category" style="display: none">
+                <div id="_sub_category_${rootCategory.categoryId?c}" class="_sub_category" <#if rootCategory_index == 0>style="display: inline"<#else>style="display: none"</#if>>
               </#if>
                 <select id="_select_sub_category_${rootCategory.categoryId?c}" name="category">
                   <option value="">NONE</option>
