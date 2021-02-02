@@ -2,6 +2,7 @@ package com.jaeeunyoo.blog.domain.tag.repository;
 
 import com.jaeeunyoo.blog.domain.post.entity.PostTag;
 import com.jaeeunyoo.blog.domain.tag.entity.Tag;
+import com.jaeeunyoo.blog.domain.tag.entity.TagIdGettable;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -26,4 +27,6 @@ public interface TagRepository extends JpaRepository<Tag, Integer> {
             + "limit 10"
     )
     List<Tag> findAllByQuery();
+
+    List<TagIdGettable> findAllBy();
 }
