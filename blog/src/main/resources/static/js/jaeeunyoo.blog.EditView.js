@@ -95,7 +95,7 @@ jaeeunyoo.blog.EditView = (function () {
     param.postId = _htOption.postId;
     param.tags = tags;
     param.postTitle = $('#postTitle').val();
-    param.postContentHtml = _htEle.editor.getHtml();
+    param.postContentHtml = $('.tui-editor-contents').html();
 
     let rootCategoryId = $('#_select_root_category').val();
     let subCategoryId = null;
