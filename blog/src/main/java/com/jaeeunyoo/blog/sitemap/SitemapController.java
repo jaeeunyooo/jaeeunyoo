@@ -3,8 +3,6 @@ package com.jaeeunyoo.blog.sitemap;
 import com.jaeeunyoo.blog.domain.category.repository.CategoryRepository;
 import com.jaeeunyoo.blog.domain.post.repository.PostRepository;
 import com.jaeeunyoo.blog.domain.tag.repository.TagRepository;
-import com.jaeeunyoo.blog.sitemap.XmlUrl.ChangeFrequency;
-import com.jaeeunyoo.blog.sitemap.XmlUrl.Priority;
 import java.time.LocalDate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,18 +20,18 @@ public class SitemapController {
     @Value("${url}")
     private String url;
 
-    @GetMapping("/sitemap.xml")
+    @GetMapping("/sitemap")
     public XmlUrlSet siteMap() {
         XmlUrlSet xmlUrlSet = new XmlUrlSet();
         LocalDate now = LocalDate.now();
-        postRepository.findAllByDeletedFalse().forEach(postIdGettable -> xmlUrlSet.addUrl(new XmlUrl(url + "/post/" + postIdGettable.getPostId(), now, Priority.HIGH, ChangeFrequency.DAILY)));
-        tagRepository.findAllBy().forEach(tagIdGettable -> xmlUrlSet.addUrl(new XmlUrl(url + "/tag/" + tagIdGettable.getTagId(), now, Priority.MEDIUM, ChangeFrequency.DAILY)));
-        categoryRepository.findAllBy().forEach(categoryIdGettable -> xmlUrlSet.addUrl(new XmlUrl(url + "/tag/" + categoryIdGettable.getCategoryId(), now, Priority.MEDIUM, ChangeFrequency.DAILY)));
-        xmlUrlSet.addUrl(new XmlUrl(url, now, Priority.MEDIUM, ChangeFrequency.DAILY));
-        xmlUrlSet.addUrl(new XmlUrl(url + "/about", now, Priority.MEDIUM, ChangeFrequency.DAILY));
-        xmlUrlSet.addUrl(new XmlUrl(url + "/tag", now, Priority.MEDIUM, ChangeFrequency.DAILY));
-        xmlUrlSet.addUrl(new XmlUrl(url + "/archive", now, Priority.MEDIUM, ChangeFrequency.DAILY));
-        xmlUrlSet.addUrl(new XmlUrl(url + "/category", now, Priority.MEDIUM, ChangeFrequency.DAILY));
+        postRepository.findAllByDeletedFalse().forEach(postIdGettable -> xmlUrlSet.addUrl(new XmlUrl(url + "/post/" + postIdGettable.getPostId(), now)));
+        tagRepository.findAllBy().forEach(tagIdGettable -> xmlUrlSet.addUrl(new XmlUrl(url + "/tag/" + tagIdGettable.getTagId(), now)));
+        categoryRepository.findAllBy().forEach(categoryIdGettable -> xmlUrlSet.addUrl(new XmlUrl(url + "/tag/" + categoryIdGettable.getCategoryId(), now)));
+        xmlUrlSet.addUrl(new XmlUrl(url, now));
+        xmlUrlSet.addUrl(new XmlUrl(url + "/about", now));
+        xmlUrlSet.addUrl(new XmlUrl(url + "/tag", now));
+        xmlUrlSet.addUrl(new XmlUrl(url + "/archive", now));
+        xmlUrlSet.addUrl(new XmlUrl(url + "/category", now));
         return xmlUrlSet;
     }
 }
