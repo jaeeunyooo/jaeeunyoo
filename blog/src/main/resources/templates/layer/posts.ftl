@@ -17,7 +17,7 @@
   <link rel="preload" href="/static/css/home.css" as="style">
   <link rel="stylesheet" href="/static/css/home.css">
   <title>기계는 거짓말을 하지 않는다</title>
-  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 </head>
 <body data-spy="scroll" data-target="#toc">
 <@sidebar.common_sidebar selectedMenu="POSTS"/>
@@ -143,8 +143,8 @@
       </a>
     </li>
 </script>
-<script src="//cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script>
-<script src="//cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script>
+<script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script>
 <script src="/webjars/jquery-tmpl/beta1.0.0/jquery.tmpl.min.js"></script>
 <script src="/static/js/lib/home.min.js"></script>
 <script src="/static/js/util/jaeeunyoo.blog.util.CommonUtil.js"></script>

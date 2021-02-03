@@ -20,23 +20,23 @@
   <link rel="preconnect" href="//cdn.jsdelivr.net">
   <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
   <link rel="stylesheet"
-        href="//cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20="
         crossorigin="anonymous">
   <link rel="stylesheet"
-        href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"
         integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
         crossorigin="anonymous">
 </#macro>
 
 <#macro cdnjs_cloudflare_com>
-  <link rel="preconnect" href="//cdnjs.cloudflare.com">
-  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"/>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"/>
 </#macro>
 
 <#macro uicdn_toast_com>
-  <link rel="preconnect" href="//uicdn.toast.com">
-  <link rel="dns-prefetch" href="//uicdn.toast.com">
-  <link rel="stylesheet" href="//uicdn.toast.com/editor/latest/toastui-editor.min.css"/>
+  <link rel="preconnect" href="https://uicdn.toast.com">
+  <link rel="dns-prefetch" href="https://uicdn.toast.com">
+  <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"/>
 </#macro>

@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="/static/css/post.css">
   <link rel="stylesheet" href="/static/css/lib/androidstudio.min.css">
   <title>기계는 거짓말을 하지 않는다</title>
-  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 </head>
 <body data-spy="scroll" data-target="#toc">
 <@sidebar.common_sidebar selectedMenu="ABOUT"/>
@@ -60,11 +60,11 @@
     <@trending_tags.trending_tags_m/>
   </div>
 </div>
-<script src="//cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script>
-<script src="//cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
-<script src="//uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
-<script src="//uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight-all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script>
+<script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js"></script>
+<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+<script src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight-all.min.js"></script>
 <script src="/webjars/jquery-tmpl/beta1.0.0/jquery.tmpl.min.js"></script>
 <script src="/static/js/lib/post.min.js"></script>
 <script src="/static/js/util/jaeeunyoo.blog.util.CommonUtil.js"></script>
