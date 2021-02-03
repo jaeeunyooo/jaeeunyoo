@@ -19,7 +19,7 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
 
 //    long findCountByDeletedFalseOrderByModifyDateTimeDesc(Pageable pageable);
 
-    @Query(nativeQuery = true, value = "SELECT year(post.register_datetime) as y from post post group by year(post.register_datetime) order by y desc")
+    @Query(nativeQuery = true, value = "SELECT year(post.register_datetime) as y from post post where post.deleted = 0 group by year(post.register_datetime) order by y desc")
     List<Integer> findArchiveYears();
 
     List<Post> findByDeletedFalseOrderByRegisterDateTimeDesc();
