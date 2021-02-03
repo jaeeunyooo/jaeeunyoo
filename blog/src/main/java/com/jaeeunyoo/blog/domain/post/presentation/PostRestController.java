@@ -3,6 +3,7 @@ package com.jaeeunyoo.blog.domain.post.presentation;
 import com.jaeeunyoo.blog.domain.category.application.CategoryService;
 import com.jaeeunyoo.blog.domain.category.entity.Category;
 import com.jaeeunyoo.blog.domain.post.application.PostService;
+import com.jaeeunyoo.blog.domain.post.dto.PostDetailDto;
 import com.jaeeunyoo.blog.domain.post.dto.PostEditDto;
 import com.jaeeunyoo.blog.domain.post.dto.PostSummaryDto;
 import com.jaeeunyoo.blog.domain.post.dto.SimpleJekyllSearchResult;
@@ -39,8 +40,8 @@ public class PostRestController {
     }
 
     @GetMapping("/{postId}")
-    public Post post(Model model, @PathVariable("postId") Post post) {
-        return post;
+    public PostDetailDto post(Model model, @PathVariable("postId") Post post) {
+        return PostDetailDto.create(post);
     }
 
     @GetMapping("/all")

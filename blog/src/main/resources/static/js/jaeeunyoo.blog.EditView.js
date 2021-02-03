@@ -29,7 +29,6 @@ jaeeunyoo.blog.EditView = (function () {
       previewStyle: 'vertical',
       height: '900px',
       viewer: true,
-      // plugins: [[codeSyntaxHighlight, colorSyntax, chart, tableMergedCell, uml]],
       plugins: [[chart], codeSyntaxHighlight, colorSyntax, tableMergedCell, uml],
       hooks: {
         'addImageBlobHook': function(blob, callback) {
@@ -57,6 +56,24 @@ jaeeunyoo.blog.EditView = (function () {
         }
       }
     });
+
+    if(_htOption.postId) {
+      $.ajax({
+        url: "/api/post/" + _htOption.postId,
+        cache: false,
+        contentType: 'application/json',
+        data: {},
+        success: function (data) {
+          _htEle.editor.setMarkdown(data.postContentMd);
+        },
+        error: function (data) {
+          console.log(data);
+        },
+        type: "GET",
+      });
+    } else {
+
+    }
   }
 
   function _initEvent() {
@@ -95,6 +112,7 @@ jaeeunyoo.blog.EditView = (function () {
     param.postId = _htOption.postId;
     param.tags = tags;
     param.postTitle = $('#postTitle').val();
+    param.postContentMd = _htEle.editor.getMarkdown();
     param.postContentHtml = $('.tui-editor-contents').html();
 
     let rootCategoryId = $('#_select_root_category').val();

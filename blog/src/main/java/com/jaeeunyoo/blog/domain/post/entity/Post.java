@@ -34,6 +34,9 @@ public class Post {
     @Column(name = "post_content_html")
     private String postContentHtml;
 
+    @Column(name = "post_content_md")
+    private String postContentMd;
+
     @Column(name = "deleted", nullable = false)
     private Boolean deleted;
 
@@ -61,6 +64,7 @@ public class Post {
         Post post = new Post();
         post.postTitle = postEditDto.getPostTitle();
         post.postContentHtml = postEditDto.getPostContentHtml();
+        post.postContentMd = postEditDto.getPostContentMd();
         post.deleted = false;
         post.category = category;
         post.registerDateTime = LocalDateTime.now();
@@ -74,6 +78,7 @@ public class Post {
     public void modify(PostEditDto postEditDto, Category category) {
         this.postTitle = postEditDto.getPostTitle();
         this.postContentHtml = postEditDto.getPostContentHtml();
+        this.postContentMd = postEditDto.getPostContentMd();
         this.modifyDateTime = LocalDateTime.now();
         this.category = category;
     }

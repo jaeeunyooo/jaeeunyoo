@@ -17,6 +17,7 @@ public class PostDetailDto {
     private Integer postId;
     private String postTitle;
     private String postContentHtml;
+    private String postContentMd;
     private Boolean deleted;
     private String formattedRegisterDayOfMonth;
     private String formattedModifyDayOfMonth;
@@ -37,6 +38,7 @@ public class PostDetailDto {
         dto.postId = post.getPostId();
         dto.postTitle = post.getPostTitle();
         dto.postContentHtml = post.getPostContentHtml();
+        dto.postContentMd = post.getPostContentMd();
         dto.wordCount = HtmlUtil.htmlToText(post.getPostContentHtml()).split(REGEX_BLANK).length;
         dto.minuteToRead = dto.wordCount / WORDS_PER_MINUTE;
         dto.deleted = post.getDeleted();
