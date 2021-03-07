@@ -6,7 +6,6 @@ import com.jaeeunyoo.blog.domain.post.application.PostService;
 import com.jaeeunyoo.blog.domain.post.dto.PostDetailDto;
 import com.jaeeunyoo.blog.domain.post.entity.Post;
 import com.jaeeunyoo.blog.domain.tag.application.TagService;
-import com.jaeeunyoo.blog.exception.NotFoundException;
 import javax.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -48,11 +47,8 @@ public class PostController {
     }
 
     @GetMapping("/post/{postId}")
-    public String post(Model model, @PathVariable("postId") Post post) {
-        if(post == null || post.getDeleted()) {
-            throw new NotFoundException();
-        }
-
+    public String post(Model model, @PathVariable("postId") Integer postId) {
+        Post post = postService.getPost(postId);
         model.addAttribute("url", url);
         model.addAttribute("trendingTags", tagService.getTrendingTags());
         model.addAttribute("categories", post.getCategory().getCategoriesIncludeUpperCategory());
@@ -69,12 +65,9 @@ public class PostController {
     }
 
     @GetMapping("/post/{postId}/edit")
-    public String editPost(Model model, HttpSession httpSession, @PathVariable("postId") Post post) {
+    public String editPost(Model model, HttpSession httpSession, @PathVariable("postId") Integer postId) {
         memberService.verifyMember((String) httpSession.getAttribute("githubAccount"), (Integer) httpSession.getAttribute("githubAccountId"));
-        if(post == null) {
-            throw new NotFoundException();
-        }
-
+        Post post = postService.getPost(postId);
         model.addAttribute("allCategories", categoryService.getAllCategories());
         model.addAttribute("post", PostDetailDto.create(post));
         return "layer/edit";

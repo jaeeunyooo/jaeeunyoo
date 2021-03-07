@@ -5,6 +5,7 @@ import com.jaeeunyoo.blog.domain.post.entity.Post;
 import com.jaeeunyoo.blog.domain.tag.dto.TagDto;
 import com.jaeeunyoo.blog.domain.tag.entity.Tag;
 import com.jaeeunyoo.blog.domain.tag.repository.TagRepository;
+import com.jaeeunyoo.blog.exception.NotFoundException;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
@@ -15,6 +16,10 @@ import org.springframework.stereotype.Service;
 public class TagService {
 
     private final TagRepository tagRepository;
+
+    public Tag getTag(Integer tagId) {
+        return tagRepository.findById(tagId).orElseThrow(NotFoundException::new);
+    }
 
     public List<TagDto> getAllTags() {
         return TagDto.createMany(tagRepository.findByOrderByTagNameAsc());

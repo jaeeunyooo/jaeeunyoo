@@ -4,6 +4,7 @@ import com.jaeeunyoo.blog.domain.post.application.PostService;
 import com.jaeeunyoo.blog.domain.tag.application.TagService;
 import com.jaeeunyoo.blog.domain.tag.dto.TagDto;
 import com.jaeeunyoo.blog.domain.tag.entity.Tag;
+import com.jaeeunyoo.blog.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -29,7 +30,8 @@ public class TagController {
     }
 
     @GetMapping("{tagId}")
-    public String tag(Model model, @PathVariable("tagId") Tag tag) {
+    public String tag(Model model, @PathVariable("tagId") Integer tagId) {
+        Tag tag = tagService.getTag(tagId);
         model.addAttribute("trendingTags", tagService.getTrendingTags());
         model.addAttribute("tag", TagDto.create(tag));
         model.addAttribute("taggedPosts", postService.getTaggedPosts(tag));

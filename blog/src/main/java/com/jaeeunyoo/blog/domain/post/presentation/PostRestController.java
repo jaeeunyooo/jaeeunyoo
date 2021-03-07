@@ -40,8 +40,8 @@ public class PostRestController {
     }
 
     @GetMapping("/{postId}")
-    public PostDetailDto post(Model model, @PathVariable("postId") Post post) {
-        return PostDetailDto.create(post);
+    public PostDetailDto post(Model model, @PathVariable("postId") Integer postId) {
+        return PostDetailDto.create(postService.getPost(postId));
     }
 
     @GetMapping("/all")

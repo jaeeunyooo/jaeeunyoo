@@ -29,7 +29,8 @@ public class CategoryController {
     }
 
     @GetMapping("/{categoryId}")
-    public String category(Model model, @PathVariable("categoryId") Category category) {
+    public String category(Model model, @PathVariable("categoryId") Integer categoryId) {
+        Category category = categoryService.getCategory(categoryId);
         model.addAttribute("trendingTags", tagService.getTrendingTags());
         model.addAttribute("category", CategoryDetailDto.create(category));
         return "layer/category";
