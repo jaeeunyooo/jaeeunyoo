@@ -18,11 +18,6 @@
   <link rel="stylesheet" href="/static/css/lib/androidstudio.min.css">
   <title>기계는 거짓말을 하지 않는다</title>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <style>
-    div > pre.lang-uml {
-      padding: 0rem;
-    }
-  </style>
 </head>
 <body data-spy="scroll" data-target="#toc">
 <@sidebar.common_sidebar selectedMenu="POSTS"/>
